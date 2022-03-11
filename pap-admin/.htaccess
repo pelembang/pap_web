@@ -1,0 +1,35 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-XSS-Protection "1; mode=block"
+  Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure;SameSite=Strict
+  Header always append X-Frame-Options SAMEORIGIN
+
+  Header set X-Frame-Options SAMEORIGIN
+  Header set X-Content-Type-Options nosniff
+  Header unset X-Powered-By
+  Header set X-Permitted-Cross-Domain-Policies "none"
+
+  Header set X-Frame-Options "SAMEORIGIN"
+  
+  Header set Content-Security-Policy "default-src 'self'"
+  Header set Content-Security-Policy "font-src 'self' fonts.googleapis.com fonts.gstatic.com;"
+  Header set Content-Security-Policy "media-src 'self';"
+  Header set Content-Security-Policy "form-action 'self';"
+  
+
+</IfModule>
+
+php_value upload_max_filesize 65M
+
+php_value session.cookie_httponly 1
+php_value session.cookie_secure 1
+
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+ErrorDocument 403 /403.html

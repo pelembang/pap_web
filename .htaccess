@@ -1,0 +1,91 @@
+ErrorDocument 404     /2002/404
+php_flag display_errors on
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /2022/
+RewriteRule ^$ index2.php [L]
+
+RewriteRule ^beranda$ index2.php [L]
+
+RewriteRule ^404$ index2.php?error=404 [L]
+
+RewriteRule ^id$ index2.php?bhs=id [L]
+RewriteRule ^id/$ index2.php?bhs=id [L]
+
+RewriteRule ^en$ index2.php?bhs=en [L]
+RewriteRule ^en/$ index2.php?bhs=en [L]
+
+RewriteRule ^id/berita$ index2.php?plgmodul=berita&bhs=id [L]
+RewriteRule ^id/berita/$ index2.php?plgmodul=berita&bhs=id [L]
+RewriteRule ^id/berita/(.*)$ index2.php?plgmodul=berita&bid=$1&bhs=id [L]
+RewriteRule ^id/berita/(.*)/$ index2.php?plgmodul=berita&bid=$1&bhs=id [L]
+
+RewriteRule ^en/news$ index2.php?plgmodul=berita&bhs=en [L]
+RewriteRule ^en/news/$ index2.php?plgmodul=berita&bhs=en [L]
+RewriteRule ^en/news/(.*)$ index2.php?plgmodul=berita&bid=$1&bhs=en [L]
+RewriteRule ^en/news/(.*)/$ index2.php?plgmodul=berita&bid=$1&bhs=en [L]
+
+
+RewriteRule ^id/pengumuman$ index2.php?plgmodul=pengumuman&bhs=id [L]
+RewriteRule ^id/pengumuman/$ index2.php?plgmodul=pengumuman&bhs=id [L]
+RewriteRule ^id/pengumuman/(.*)$ index2.php?plgmodul=pengumuman&pid=$1&bhs=id [L]
+RewriteRule ^id/pengumuman/(.*)/$ index2.php?plgmodul=pengumuman&pid=$1&bhs=id [L]
+
+RewriteRule ^en/announcement$ index2.php?plgmodul=pengumuman&bhs=en [L]
+RewriteRule ^en/announcement/$ index2.php?plgmodul=pengumuman&bhs=en [L]
+RewriteRule ^en/announcement/(.*)$ index2.php?plgmodul=pengumuman&pid=$1&bhs=en [L]
+RewriteRule ^en/announcement/(.*)/$ index2.php?plgmodul=pengumuman&pid=$1&bhs=en [L]
+
+RewriteRule ^id/acara$ index2.php?plgmodul=agenda&bhs=id [L]
+RewriteRule ^id/acara/$ index2.php?plgmodul=agenda&bhs=id [L]
+RewriteRule ^id/acara/(.*)$ index2.php?plgmodul=agenda&aid=$1&bhs=id [L]
+RewriteRule ^id/acara/(.*)/$ index2.php?plgmodul=agenda&aid=$1&bhs=id [L]
+
+RewriteRule ^en/events$ index2.php?plgmodul=agenda&bhs=en [L]
+RewriteRule ^en/events/$ index2.php?plgmodul=agenda&bhs=en [L]
+RewriteRule ^en/events/(.*)$ index2.php?plgmodul=agenda&aid=$1&bhs=en [L]
+RewriteRule ^en/events/(.*)/$ index2.php?plgmodul=agenda&aid=$1&bhs=en [L]
+
+
+RewriteRule ^id/program-studi$ index2.php?plgmodul=prodi&bhs=id [L]
+RewriteRule ^id/program-studi/$ index2.php?plgmodul=prodi&bhs=id [L]
+RewriteRule ^id/program-studi/(.*)$ index2.php?plgmodul=prodi&pdid=$1&bhs=id [L]
+RewriteRule ^id/program-studi/(.*)/$ index2.php?plgmodul=prodi&pdid=$1&bhs=id [L]
+
+RewriteRule ^en/study-program$ index2.php?plgmodul=prodi&bhs=en [L]
+RewriteRule ^en/study-program/$ index2.php?plgmodul=prodi&bhs=en [L]
+RewriteRule ^en/study-program/(.*)$ index2.php?plgmodul=prodi&pdid=$1&bhs=en [L]
+RewriteRule ^en/study-program/(.*)/$ index2.php?plgmodul=prodi&pdid=$1&bhs=en [L]
+
+
+
+RewriteRule ^id/(.*)$ index2.php?plgmodul=halaman&hid=$1&bhs=id [L]
+RewriteRule ^id/(.*)/$ index2.php?plgmodul=halaman&hid=$1&bhs=id [L]
+
+RewriteRule ^en/(.*)$ index2.php?plgmodul=halaman&hid=$1&bhs=en [L]
+RewriteRule ^en/(.*)/$ index2.php?plgmodul=halaman&hid=$1&bhs=en [L]
+
+
+RewriteRule ^galeri-foto/([0-9]+)$ index2.php?plgmodul=galleries&fid=$1 [L]
+RewriteRule ^galeri-foto/([0-9]+)/$ index2.php?plgmodul=galleries&fid=$1 [L]
+RewriteRule ^galeri-foto/halaman/([0-9]+)$ index2.php?plgmodul=galleries&hal=$1 [L]
+RewriteRule ^galeri-foto/halaman/([0-9]+)/$ index2.php?plgmodul=galleries&hal=$1 [L]
+RewriteRule ^galeri-foto$ index2.php?plgmodul=galleries [L]
+RewriteRule ^galeri-foto/$ index2.php?plgmodul=galleries [L]
+RewriteRule ^galeri-foto/([0-9]+)/(.*)/halaman/([0-9]+)$ index2.php?plgmodul=galleries&fid=$1&half=$3 [L]
+RewriteRule ^galeri-foto/([0-9]+)/(.*)/halaman/([0-9]+)/$ index2.php?plgmodul=galleries&fid=$1&half=$3 [L]
+RewriteRule ^galeri-foto/([0-9]+)/halaman/([0-9]+)$ index2.php?plgmodul=galleries&fid=$1&half=$2 [L]
+RewriteRule ^galeri-foto/([0-9]+)/halaman/([0-9]+)/$ index2.php?plgmodul=galleries&fid=$1&half=$2 [L]
+RewriteRule ^galeri-foto/([0-9]+)/(.*)$ index2.php?plgmodul=galleries&fid=$1 [L]
+RewriteRule ^galeri-foto/([0-9]+)/(.*)/$ index2.php?plgmodul=galleries&fid=$1 [L]
+
+
+RewriteRule ^captcha$ library/plugins/captcha/display.php [L]
+
+
+RewriteRule ^hubungi-kami$ index2.php?plgmodul=hubungikami [L]
+
+Options All -Indexes
+
+
+</IfModule>

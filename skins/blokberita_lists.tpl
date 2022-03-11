@@ -1,0 +1,1 @@
+<li><a href="/kajian/$id/$judulid" title="$judulberita">$judulberita</a><br/><span class="recent-news-date">$tanggal</span></li>
